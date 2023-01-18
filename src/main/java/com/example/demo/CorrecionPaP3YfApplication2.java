@@ -7,22 +7,21 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.demo.correccion.service.ICuentaService;
 import com.example.demo.modelo.CuentaBancaria;
 import com.example.demo.service.ICuentaBancariaService;
 
 @SpringBootApplication
-public class Prueba1PaP3YfApplication implements CommandLineRunner{
+public class CorrecionPaP3YfApplication2 implements CommandLineRunner{
 
 	@Autowired
-	private ICuentaService cuentaService;
+	private ICuentaBancariaService cuentaService;
 	
 	//@Autowired
 	//private ICuentaBancariaService cuentaService;
 	
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Prueba1PaP3YfApplication.class, args);
+		SpringApplication.run(CorrecionPaP3YfApplication2.class, args);
 	}
 	
 	public void run(String... args)throws Exception {
@@ -38,11 +37,8 @@ public class Prueba1PaP3YfApplication implements CommandLineRunner{
 		cuenta.setSaldo(new BigDecimal(3000));
 		cuenta.setCedula("13322");
 		
-	
-		
-		
-		
-		
+		this.cuentaService.ingresar(cuenta);
+			
 	}
 
 }
